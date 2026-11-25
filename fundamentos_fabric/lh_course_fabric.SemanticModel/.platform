@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "lh_course_fabric"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0a4aa03b-c4cd-a0b6-492f-3447d05c7d50"
+  }
+}

@@ -1,0 +1,225 @@
+table city_safety_seattle
+	lineageTag: 163d938d-3a8c-4486-9757-0bb8924f8242
+	sourceLineageTag: [dbo].[city_safety_seattle]
+
+	measure Ocurrences = COUNTROWS(city_safety_seattle)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: ab8ac828-5ce5-4b42-a0f1-e5c434392292
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+	measure 'Ocurrences LY' =
+			
+			CALCULATE(
+			    [Ocurrences],
+			    DATEADD(
+			        dim_calendar[date],
+			        -1,
+			        YEAR
+			    )
+			)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: 429d9b72-9b35-4b2d-be33-40d530a9b378
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Ocurrences LQ' =
+			
+			CALCULATE(
+			    [Ocurrences],
+			    DATEADD(
+			        dim_calendar[date],
+			        -1,
+			        QUARTER
+			    )
+			)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: a9b424f6-c944-42b1-aba9-612548a2469c
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Ocurrences LM' =
+			
+			CALCULATE(
+			    [Ocurrences],
+			    DATEADD(
+			        dim_calendar[date],
+			        -1,
+			        MONTH
+			    )
+			)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: b7458a24-27bf-4959-ade5-4a267d6a7f37
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Ocurrences YTD' =
+			
+			TOTALYTD([Ocurrences],dim_calendar[date])
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: 1259593f-0777-40a7-9636-8d982a6c0b5d
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Ocurrences in holidays' =
+			
+			CALCULATE(
+			    [Ocurrences],
+			    NOT ISBLANK( dim_calendar[holiday] )
+			)
+		formatString: #,0
+		displayFolder: Measures
+		lineageTag: d2e08266-7695-4baf-8dc4-089cbed848a8
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column data_type
+		dataType: string
+		sourceProviderType: varchar(8000)
+		displayFolder: Columns
+		lineageTag: 47fb1e1c-dc6d-4899-a6bb-42567df466da
+		sourceLineageTag: data_type
+		summarizeBy: none
+		sourceColumn: data_type
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column data_subtype
+		dataType: string
+		sourceProviderType: varchar(8000)
+		displayFolder: Columns
+		lineageTag: b76320af-908d-49d3-a210-57212b78e6c8
+		sourceLineageTag: data_subtype
+		summarizeBy: none
+		sourceColumn: data_subtype
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: date
+		displayFolder: Columns
+		lineageTag: 386be26c-2c72-4ac7-b546-4a5fdde0bf13
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		changedProperty = IsHidden
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		sourceProviderType: varchar(8000)
+		displayFolder: Columns
+		lineageTag: ffcc51b1-2411-4946-aba5-d390ebb550cb
+		sourceLineageTag: category
+		summarizeBy: none
+		sourceColumn: category
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column address
+		dataType: string
+		sourceProviderType: varchar(8000)
+		displayFolder: Columns
+		lineageTag: a2dd1723-c381-4006-a0a8-8ce335006a57
+		sourceLineageTag: address
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: address
+
+		changedProperty = DataCategory
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		sourceProviderType: decimal(38, 13)
+		displayFolder: Columns
+		lineageTag: 2d859c95-4e71-4dd3-b16e-8686e0d4a99b
+		sourceLineageTag: latitude
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		changedProperty = DataCategory
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		sourceProviderType: decimal(38, 13)
+		displayFolder: Columns
+		lineageTag: 9abdccc5-a12c-47fe-9267-450dae211022
+		sourceLineageTag: longitude
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		changedProperty = DataCategory
+
+		changedProperty = SummarizeBy
+
+		changedProperty = DisplayFolder
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition city_safety_seattle = entity
+		mode: directLake
+		source
+			entityName: city_safety_seattle
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

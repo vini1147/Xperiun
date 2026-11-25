@@ -1,0 +1,4 @@
+relationship 8767f4ea-02c2-2692-7678-23cc7531d959
+	fromColumn: city_safety_seattle.date
+	toColumn: dim_calendar.date
+

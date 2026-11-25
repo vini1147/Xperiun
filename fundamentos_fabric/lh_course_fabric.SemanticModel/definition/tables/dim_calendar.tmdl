@@ -1,0 +1,130 @@
+table dim_calendar
+	lineageTag: d73985a5-54ae-48f2-8105-965f1f16c969
+	sourceLineageTag: [dbo].[dim_calendar]
+
+	column date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 6f4f8c85-5605-4f2c-accf-e75d36e64cd5
+		sourceLineageTag: date
+		summarizeBy: none
+		sourceColumn: date
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4d8e976e-3ee0-498d-8b3f-627e0612f20e
+		sourceLineageTag: year
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: e3148595-6ed6-4c74-b96e-cc32c3aa5343
+		sourceLineageTag: quarter
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 2db30a04-9e54-4dc3-a732-27d64d866dce
+		sourceLineageTag: month
+		summarizeBy: none
+		sourceColumn: month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 898325f2-8e72-4f82-88aa-39a606c4de75
+		sourceLineageTag: month_name
+		summarizeBy: none
+		sourceColumn: month_name
+		sortByColumn: month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_short
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 799e7102-2252-4f85-9d87-ac157ec75fcb
+		sourceLineageTag: month_short
+		summarizeBy: none
+		sourceColumn: month_short
+		sortByColumn: month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column week_year
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 0add0248-7d11-4d3c-a115-f81f464ba564
+		sourceLineageTag: week_year
+		summarizeBy: none
+		sourceColumn: week_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column year_month
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: c6e8732d-d89e-4e5d-b97d-340351dd7a90
+		sourceLineageTag: year_month
+		summarizeBy: none
+		sourceColumn: year_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column month_year
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5f17fe69-ba3c-4201-8670-8e71ef128ce0
+		sourceLineageTag: month_year
+		summarizeBy: none
+		sourceColumn: month_year
+		sortByColumn: year_month
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column holiday
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: af408ee1-d2de-4c88-9c81-19aa54222267
+		sourceLineageTag: holiday
+		summarizeBy: none
+		sourceColumn: holiday
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_calendar = entity
+		mode: directLake
+		source
+			entityName: dim_calendar
+			schemaName: dbo
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

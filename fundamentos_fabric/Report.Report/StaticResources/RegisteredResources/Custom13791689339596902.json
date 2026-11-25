@@ -1,0 +1,31 @@
+{
+  "name": "Custom",
+  "textClasses": {
+    "callout": {
+      "fontSize": 15
+    },
+    "title": {
+      "fontSize": 10
+    },
+    "header": {
+      "fontSize": 10
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "border": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F4F4"
+              }
+            },
+            "show": true,
+            "radius": 5
+          }
+        ]
+      }
+    }
+  }
+}

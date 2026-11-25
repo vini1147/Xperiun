@@ -1,0 +1,128 @@
+{
+  "config": "{\"version\":\"5.68\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU11\",\"version\":{\"visual\":\"2.4.0\",\"report\":\"3.0.0\",\"page\":\"2.3.0\"},\"type\":2},\"customTheme\":{\"name\":\"Custom13791689339596902.json\",\"version\":{\"visual\":\"2.4.0\",\"report\":\"3.0.0\",\"page\":\"2.3.0\"},\"type\":1}},\"activeSectionIndex\":0,\"modelExtensions\":[{\"name\":\"extension\",\"entities\":[{\"name\":\"city_safety_seattle\",\"extends\":\"city_safety_seattle\",\"measures\":[{\"name\":\"Dynamic period\",\"dataType\":3,\"expression\":\"\\nIF(\\n    ISFILTERED(dim_calendar[month_short]),\\n    [Ocurrences LM],\\n    [Ocurrences LY]\\n)\",\"errorMessage\":null,\"hidden\":false,\"references\":{\"unrecognizedReferences\":false,\"measures\":[{\"schema\":\"\",\"entity\":\"city_safety_seattle\",\"name\":\"Ocurrences LM\"},{\"schema\":\"\",\"entity\":\"city_safety_seattle\",\"name\":\"Ocurrences LY\"}]},\"formulaOverride\":null,\"formatInformation\":{\"formatString\":\"G\",\"format\":\"General\",\"thousandSeparator\":false,\"currencyFormat\":null,\"dateTimeCustomFormat\":null},\"displayFolder\":\"Measures\"},{\"name\":\"Dynamic label card\",\"dataType\":3,\"expression\":\"\\nIF(\\n    ISFILTERED(dim_calendar[month_short]),\\n    \\\"Last month\\\",\\n    \\\"Last year\\\"\\n)\",\"errorMessage\":null,\"hidden\":false,\"formulaOverride\":null,\"formatInformation\":{\"formatString\":\"G\",\"format\":\"General\",\"thousandSeparator\":false,\"currencyFormat\":null,\"dateTimeCustomFormat\":null},\"displayFolder\":\"Measures\"}]}]}],\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU11",
+            "path": "BaseThemes/CY25SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    },
+    {
+      "resourcePackage": {
+        "items": [
+          {
+            "name": "Custom13791689339596902.json",
+            "path": "Custom13791689339596902.json",
+            "type": 100
+          }
+        ],
+        "name": "RegisteredResources",
+        "type": 1
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "cf7b0a6020200ab62903",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2a4901054698ca274476\",\"layouts\":[{\"id\":0,\"position\":{\"x\":687.3903666427032,\"y\":41.40905823148814,\"z\":5,\"width\":245.69374550682963,\"height\":67.17469446441409,\"tabOrder\":5}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_calendar.holiday\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"holiday\"},\"Name\":\"dim_calendar.holiday\",\"NativeReferenceName\":\"holiday\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[{\"name\":\"1d7b9c95a6cb968b71c2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_calendar\"}},\"Property\":\"holiday\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"holiday\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 67.17,
+          "width": 245.69,
+          "x": 687.39,
+          "y": 41.41,
+          "z": 5.00
+        },
+        {
+          "config": "{\"name\":\"47cc33d177b01923b699\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1085.8375269590224,\"y\":41.61107051814902,\"z\":3,\"width\":166.55643421998562,\"height\":67.17469446441409,\"tabOrder\":3}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_calendar.month_short\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month_short\"},\"Name\":\"dim_calendar.month_short\",\"NativeReferenceName\":\"month_short\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]}}}",
+          "filters": "[{\"name\":\"894c7acdb07a660a423e\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"dim_calendar\"}},\"Property\":\"month_short\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month_short\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"null\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 67.17,
+          "width": 166.56,
+          "x": 1085.84,
+          "y": 41.61,
+          "z": 3.00
+        },
+        {
+          "config": "{\"name\":\"4fbafc4aa5348699a969\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.44644140905823,\"y\":447.21782890007194,\"z\":7,\"width\":792.293314162473,\"height\":255.8159597411934,\"tabOrder\":7}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"city_safety_seattle.category\",\"active\":true}],\"Values\":[{\"queryRef\":\"city_safety_seattle.Ocurrences\"}],\"Columns\":[{\"queryRef\":\"dim_calendar.month_short\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"city_safety_seattle\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"category\"},\"Name\":\"city_safety_seattle.category\",\"NativeReferenceName\":\"category\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"},\"Name\":\"city_safety_seattle.Ocurrences\",\"NativeReferenceName\":\"Ocurrences\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month_short\"},\"Name\":\"dim_calendar.month_short\",\"NativeReferenceName\":\"month_short\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"columnHeaders\":[{\"properties\":{\"columnAdjustment\":{\"expr\":{\"Literal\":{\"Value\":\"'growToFit'\"}}}}}],\"columnFormatting\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Center'\"}}},\"styleTotal\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"styleHeader\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences\"}}],\"values\":[{\"properties\":{\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"city_safety_seattle\"}},\"Property\":\"Ocurrences\"}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#cccccc'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#a1343c'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'noColor'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"city_safety_seattle.Ocurrences\"}}],\"grid\":[{\"properties\":{\"outlineWeight\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"outlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 255.82,
+          "width": 792.29,
+          "x": 29.45,
+          "y": 447.22,
+          "z": 7.00
+        },
+        {
+          "config": "{\"name\":\"4ff7874e739434850cb9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.44644140905823,\"y\":14.723220704529115,\"z\":9,\"width\":396.60675772825306,\"height\":52.451473759884976,\"tabOrder\":9}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Emergency Ocurrences in the City of Seattle\",\"textStyle\":{\"fontSize\":\"14pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 52.45,
+          "width": 396.61,
+          "x": 29.45,
+          "y": 14.72,
+          "z": 9.00
+        },
+        {
+          "config": "{\"name\":\"6a19c102e06668621077\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.44644140905823,\"y\":100.30194104960461,\"z\":1,\"width\":1222.9475197699496,\"height\":116.86556434219986,\"tabOrder\":1}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"city_safety_seattle.Ocurrences\"},{\"queryRef\":\"city_safety_seattle.Dynamic period\"},{\"queryRef\":\"city_safety_seattle.Ocurrences in holidays\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"city_safety_seattle\",\"Type\":0},{\"Name\":\"c1\",\"Entity\":\"city_safety_seattle\",\"Schema\":\"extension\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"},\"Name\":\"city_safety_seattle.Ocurrences\",\"NativeReferenceName\":\"Ocurrences\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences in holidays\"},\"Name\":\"city_safety_seattle.Ocurrences in holidays\",\"NativeReferenceName\":\"Ocurrences in holidays\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c1\"}},\"Property\":\"Dynamic period\"},\"Name\":\"city_safety_seattle.Dynamic period\",\"NativeReferenceName\":\"Dynamic period\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"}}}]},\"columnProperties\":{\"city_safety_seattle.Ocurrences\":{\"formatString\":\"#,0\"},\"city_safety_seattle.Ocurrences in holidays\":{\"formatString\":\"#,0\"},\"city_safety_seattle.Ocurrences LM\":{\"formatString\":null}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"value\":[{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences\"}},{\"properties\":{\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences in holidays\"}},{\"properties\":{\"horizontalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"15D\"}}}},\"selector\":{\"id\":\"default\"}}],\"label\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}},\"selector\":{\"id\":\"default\"}},{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Dynamic period\"}}],\"layout\":[{\"properties\":{\"autoGrid\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}},{\"properties\":{\"paddingIndividual\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"backgroundFillColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.1}}}}},\"backgroundShow\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}},\"selector\":{\"id\":\"default\"}}],\"fillCustom\":[{\"properties\":{\"fillColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#FBFBFB'\"}}}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"border\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.2}}}}},\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 116.87,
+          "width": 1222.95,
+          "x": 29.45,
+          "y": 100.30,
+          "z": 1.00
+        },
+        {
+          "config": "{\"name\":\"6dcd86402c4526129369\",\"layouts\":[{\"id\":0,\"position\":{\"x\":937.6851186196981,\"y\":41.40905823148814,\"z\":2,\"width\":143.5514018691589,\"height\":67.17469446441409,\"tabOrder\":2}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"dim_calendar.year\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"},\"Name\":\"dim_calendar.year\",\"NativeReferenceName\":\"year\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"2019L\"}}]]}}}]}}}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 67.17,
+          "width": 143.55,
+          "x": 937.69,
+          "y": 41.41,
+          "z": 2.00
+        },
+        {
+          "config": "{\"name\":\"b058d71ea2cd6d53a5a1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":837.3831775700935,\"y\":217.16750539180447,\"z\":8,\"width\":415.0107836089145,\"height\":485.8662832494608,\"tabOrder\":8}}],\"singleVisual\":{\"visualType\":\"map\",\"projections\":{\"Y\":[{\"queryRef\":\"city_safety_seattle.latitude\"}],\"X\":[{\"queryRef\":\"city_safety_seattle.longitude\"}],\"Size\":[{\"queryRef\":\"city_safety_seattle.Ocurrences\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"city_safety_seattle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"latitude\"},\"Name\":\"city_safety_seattle.latitude\",\"NativeReferenceName\":\"latitude1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"longitude\"},\"Name\":\"city_safety_seattle.longitude\",\"NativeReferenceName\":\"longitude\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"},\"Name\":\"city_safety_seattle.Ocurrences\",\"NativeReferenceName\":\"Ocurrences\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"90D\"}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"FillRule\":{\"Input\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"city_safety_seattle\"}},\"Property\":\"latitude\"}},\"Function\":5}},\"FillRule\":{\"linearGradient2\":{\"min\":{\"color\":{\"Literal\":{\"Value\":\"'#cccccc'\"}}},\"max\":{\"color\":{\"Literal\":{\"Value\":\"'#a1343c'\"}}},\"nullColoringStrategy\":{\"strategy\":{\"Literal\":{\"Value\":\"'noColor'\"}}}}}}}}}}},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}]}}],\"mapControls\":[{\"properties\":{}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"heatMap\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"color100\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.25}}}}},\"color50\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":8,\"Percent\":0.6}}}}},\"color0\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":-0.2}}}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ocurrences by area'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 485.87,
+          "width": 415.01,
+          "x": 837.38,
+          "y": 217.17,
+          "z": 8.00
+        },
+        {
+          "config": "{\"name\":\"e99e5a608aec01c04de7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":29.44644140905823,\"y\":217.16750539180447,\"z\":6,\"width\":792.293314162473,\"height\":211.64629762760606,\"tabOrder\":6}}],\"singleVisual\":{\"visualType\":\"areaChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_calendar.year\",\"active\":true},{\"queryRef\":\"dim_calendar.month_short\",\"active\":true}],\"Y\":[{\"queryRef\":\"city_safety_seattle.Ocurrences\"},{\"queryRef\":\"city_safety_seattle.Ocurrences LY\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_calendar\",\"Type\":0},{\"Name\":\"c\",\"Entity\":\"city_safety_seattle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"year\"},\"Name\":\"dim_calendar.year\",\"NativeReferenceName\":\"year\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"month_short\"},\"Name\":\"dim_calendar.month_short\",\"NativeReferenceName\":\"month_short\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences\"},\"Name\":\"city_safety_seattle.Ocurrences\",\"NativeReferenceName\":\"Ocurrences\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Ocurrences LY\"},\"Name\":\"city_safety_seattle.Ocurrences LY\",\"NativeReferenceName\":\"Ocurrences LY\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"dataPoint\":[{\"properties\":{\"transparency\":{\"expr\":{\"Literal\":{\"Value\":\"90D\"}}}}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":-0.25}}}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences\"}},{\"properties\":{\"fill\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":9,\"Percent\":0.4}}}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences LY\"}}],\"lineStyles\":[{\"properties\":{\"strokeWidth\":{\"expr\":{\"Literal\":{\"Value\":\"1D\"}}},\"lineStyle\":{\"expr\":{\"Literal\":{\"Value\":\"'dashed'\"}}}},\"selector\":{\"metadata\":\"city_safety_seattle.Ocurrences LY\"}}],\"valueAxis\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Ocurrences by period'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 211.65,
+          "width": 792.29,
+          "x": 29.45,
+          "y": 217.17,
+          "z": 6.00
+        },
+        {
+          "config": "{\"name\":\"fd79a54c15b752750d4e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":455.49964054636956,\"y\":41.40905823148814,\"z\":4,\"width\":227.28971962616822,\"height\":67.17469446441409,\"tabOrder\":4}}],\"singleVisual\":{\"visualType\":\"slicer\",\"projections\":{\"Values\":[{\"queryRef\":\"city_safety_seattle.category\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"city_safety_seattle\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"category\"},\"Name\":\"city_safety_seattle.category\",\"NativeReferenceName\":\"category\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"data\":[{\"properties\":{\"mode\":{\"expr\":{\"Literal\":{\"Value\":\"'Dropdown'\"}}}}}],\"general\":[{\"properties\":{}}],\"items\":[{\"properties\":{\"textSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}],\"selection\":[{\"properties\":{\"strictSingleSelect\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 67.17,
+          "width": 227.29,
+          "x": 455.50,
+          "y": 41.41,
+          "z": 4.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "Custom13791689339596902.json"
+}
