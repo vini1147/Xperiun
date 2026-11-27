@@ -192,8 +192,8 @@
                 "properties": {
                   "type": "Lakehouse",
                   "typeProperties": {
-                    "artifactId": "06791364-74df-b2cd-4053-e13650056465",
-                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "artifactId": "50056465-e136-4053-b2cd-74df06791364",
+                    "workspaceId": "25e72a92-6179-4e50-bda7-dfd1cdf5049f",
                     "rootFolder": "Tables"
                   },
                   "annotations": []
@@ -205,7 +205,7 @@
           "sink": {
             "type": "DataWarehouseSink",
             "tableOption": "autoCreate",
-            "preCopyScript": "IF EXISTS(\n    SELECT *\n    FROM sys.objects\n    WHERE object_id = OBJECT_ID(N'[dw_transformacoes_fabric].[SalesLT].[Address]')\n    AND type = 'U'\n)\nBEGIN\n    TRUNCATE TABLE [dw_transformacoes_fabric].[SalesLT].[Adress]\nEND",
+            "preCopyScript": "IF EXISTS(\n    SELECT 1\n    FROM sys.objects\n    WHERE object_id = OBJECT_ID(N'[dw_transformacoes_fabric].[SalesLT].[Address]')\n    AND type = 'U'\n)\nBEGIN\n    TRUNCATE TABLE [dw_transformacoes_fabric].[SalesLT].[Address]\nEND",
             "allowCopyCommand": true,
             "copyCommandSettings": {},
             "writeBehavior": "Insert",
@@ -222,9 +222,9 @@
                 "properties": {
                   "type": "DataWarehouse",
                   "typeProperties": {
-                    "artifactId": "d50ace3a-29ca-81e9-462b-b72c6f5f942d",
+                    "artifactId": "6f5f942d-b72c-462b-81e9-29cad50ace3a",
                     "endpoint": "w2c46x4zlu5e5afnp6k4h7kcpm-sivoojlzmfie5pnh37i435iet4.datawarehouse.fabric.microsoft.com",
-                    "workspaceId": "00000000-0000-0000-0000-000000000000"
+                    "workspaceId": "25e72a92-6179-4e50-bda7-dfd1cdf5049f"
                   },
                   "annotations": []
                 }
@@ -357,7 +357,52 @@
           "secureInput": false,
           "secureOutput": false
         },
-        "name": "LH para DW",
+        "name": "LH para DW - Full",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": [
+          {
+            "activity": "SQL Server para LH",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[SalesLT].[sp_upsert_Address]",
+          "storedProcedureParameters": {
+            "ModifiedSince": {
+              "value": {
+                "value": "@formatDateTime(utcNow(),'yyyy-MM-ddT00:00:00')",
+                "type": "Expression"
+              },
+              "type": "DateTime"
+            }
+          }
+        },
+        "linkedService": {
+          "name": "dw_transformacoes_fabric",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "d50ace3a-29ca-81e9-462b-b72c6f5f942d",
+              "endpoint": "w2c46x4zlu5e5afnp6k4h7kcpm-sivoojlzmfie5pnh37i435iet4.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "00000000-0000-0000-0000-000000000000"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.00:10:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "LH para DW - Incremental",
         "dependsOn": [
           {
             "activity": "SQL Server para LH",
